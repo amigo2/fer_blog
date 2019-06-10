@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fernando Cabello personal website</title>
+    <style>
+
+      </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="js/three.js-master/build/three.js"></script>
+	
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Fernando Cabello</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Coding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="arts.html">Arts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about.html' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    </ul>
+                    <span class="navbar-text">
+                    Developing my master plan.
+                    </span>
+                </div>
+            </nav>
+    {% block content %}
+    Hello wolrd
+    {% endblock %}
+</body>
+</html>
