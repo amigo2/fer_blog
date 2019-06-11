@@ -1,6 +1,39 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
-Index
+
+
+<!-- 3D.js-->
+<div id="container">		
+    	
+        <script>
+            var waternormals = "{% static 'textures/waternormals.jpg' %}";
+        </script>
+        <script src="{% static 'js/three.js-master/controls/OrbitControls.js' %}"></script>
+        <script src="{% static 'js/three.js-master/objects/Water.js' %}"></script>
+        <script src="{% static 'js/three.js-master/objects/Sky.js' %} "></script>
+
+        <script src="{% static 'js/three.js-master/WebGL.js' %}"></script>
+
+        <script src="{% static 'js/background.js' %}"></script>
+    </div>
+
+<div class="container">
+        <h2>Latest Posts</h2>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to my new Blog!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Browse some of my work</a>
+            </p>
+            </div>
+    </div>
+
+
+
+
 {% endblock %}
