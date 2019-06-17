@@ -1,1 +1,11 @@
 {"last_check":"2019-06-10T19:43:17Z","pypi_version":"19.1.1"}
+option_settings:
+"aws:elasticbeanstalk:application:environment":
+  DJANGO_SETTINGS_MODULE: "fer_3d_django_blog.settings"
+  PYTHONPATH: "$PYTHONPATH"
+"aws:elasticbeanstalk:container:python":
+  WSGIPath: "fer_3d_django_blog/wsgi.py"
+  StaticFiles: "/static/=www/static/"
+  packages:
+  yum:
+    postgresql95-devel: []
