@@ -7,7 +7,7 @@ import tkinter as tk
 #canvas1.pack()
 
 def start_batch(): 
-       subprocess.call([r'\venv\Scripts\activate.bat'])
+       subprocess.call([r'.\venv\Scripts\activate'])
            
 #button1 = tk.Button (root, text='Run The Matrix ',command=start_batch)
 #canvas1.create_window(170, 130, window=button1)
