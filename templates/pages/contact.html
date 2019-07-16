@@ -13,8 +13,7 @@
 
 
 <script>
-    var whale   = "{% static 'assets/whale.obj' %}";
-    var texture = "{% static 'assets/UV_Grid_Sm.jpg' %}";
+    var whale, texture ;
 
     var container, controls;
 
@@ -167,8 +166,8 @@
 
     function render() {
 
-        controls.update();
-        //object.rotation.y += 0.004;
+        //controls.update();
+        object.rotation.y += 0.004;
 
         //camera.position.x += ( mouseX - camera.position.x ) * .05;
         //camera.position.y += ( - mouseY - camera.position.y ) * .05;

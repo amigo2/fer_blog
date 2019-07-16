@@ -1,5 +1,5 @@
-var whale   = "{% static 'assets/whale.obj' %}";
-var texture = "{% static 'assets/UV_Grid_Sm.jpg' %}";
+
+var whale, texture_url;
 
 var container, controls;
 
@@ -28,7 +28,7 @@ function init()
 
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0xa0a0a0 );
-	//scene.fog = new THREE.Fog( 0xa0a0a0, 200, 3000 );
+	scene.fog = new THREE.Fog( 0xa0a0a0, 10, 3000 );
 
 	light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 	light.position.set( 0, 200, 0 );
@@ -42,8 +42,14 @@ function init()
 	light.shadow.camera.left = - 120;
 	light.shadow.camera.right = 120;
 	scene.add( light );
+	
 
-	// scene.add( new THREE.CameraHelper( light.shadow.camera ) );
+	var ground = new THREE.Mesh( new THREE.PlaneBufferGeometry( 10000, 10000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+	ground.rotation.x = - Math.PI / 2;
+	ground.position.y = -111;
+	ground.receiveShadow = true;
+	scene.add( ground );
+
 
 
 	// manager
@@ -74,7 +80,7 @@ function init()
 
 	var textureLoader = new THREE.TextureLoader( manager );
 
-	var texture = textureLoader.load( "{% static 'assets/UV_Grid_Sm.jpg' %}" );
+	var texture = textureLoader.load( texture_url );
 
 	// model
 
@@ -93,8 +99,8 @@ function init()
 
 	var loader = new THREE.OBJLoader( manager );
 
-	//loader.load( 'models/obj/male02/male02.obj', function ( obj ) 
-	loader.load( "{% static 'assets/whale.obj'  %}", function ( obj ) 
+	// loading the file 'whale' form the html file
+	loader.load( whale, function ( obj ) 
 	{
 
 		object = obj;
@@ -152,8 +158,8 @@ function animate() {
 
 function render() {
 
-	controls.update();
-	//object.rotation.y += 0.004;
+	//controls.update();
+	object.rotation.y += 0.004;
 
 	//camera.position.x += ( mouseX - camera.position.x ) * .05;
 	//camera.position.y += ( - mouseY - camera.position.y ) * .05;

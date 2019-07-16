@@ -23,9 +23,18 @@ def post(request):
 
 def about(request):
     return render( request, 'pages/about.html')
+    
 
 def coding(request):
-    return render( request, 'pages/coding.html')
+
+    posts = Post.objects.all()
+    context={
+        #passing all objects to template through posts
+        'posts'      : posts
+    }
+
+
+    return render( request, 'pages/coding.html', context)
 
 def arts(request):
     return render( request, 'pages/arts.html')
