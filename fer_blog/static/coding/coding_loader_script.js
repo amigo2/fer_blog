@@ -19,10 +19,21 @@ animate();
 function init() 
 {
 
-	container = document.createElement( 'div' );
-	document.body.appendChild( container );
+	/*const ctx = document.createElement('canvas').getContext('2d');
+	document.body.appendChild(ctx.canvas);
+	ctx.canvas.width = 1200;
+	ctx.canvas.height = 1200;
+	//ctx.fillStyle = '#FFF';
+	ctx.fillStyle = '#000';
+	ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);*/
 
-	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 5000 );
+
+	container = document.createElement( 'div' );
+	//container.height = 1200;
+	document.body.appendChild( container );
+	//tweaked the height to be avle to rich a decent scroll down..
+	//Should be done with canvas but this is quick work around
+	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight * 0.5, 1, 5000 );
 
 	camera.position.set( 500, 0, -1000 );
 
@@ -61,9 +72,10 @@ function init()
 			if ( child.isMesh ) child.material.map = texture;
 
 		} );
-
-		object.position.y = -500;
-		object.position.x = -600;
+		//Object position
+		object.position.y = -700;
+		object.position.x = 0;//160 for mobile
+		object.position.z = -400;
 		scene.add( object );
 
 	}
@@ -108,17 +120,18 @@ function init()
 	}, onProgress, onError );
 
 	//
-
+	//renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, canvas : document.getElementById('canvas') });
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+
+	renderer.setSize( window.innerWidth, window.innerHeight * 2);
 	container.appendChild( renderer.domElement );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 	controls = new THREE.TrackballControls( camera, renderer.domElement );
 
-	window.addEventListener( 'resize', onWindowResize, false );
+	//window.addEventListener( 'resize', onWindowResize, false );
 
 }
 

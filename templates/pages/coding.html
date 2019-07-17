@@ -10,8 +10,8 @@
 <script src= "{% static 'js/three.js-master/controls/TrackballControls.js' %}"></script>
 
 <script>
-    var texture_url = "{% static 'assets/UV_Grid_Sm.jpg' %}";
-    var whale       = "{% static 'assets/whale.obj' %}";
+    var texture_url = "{% static 'assets/Blue.jpg' %}";
+    var whale       = "{% static 'assets/Erika.obj' %}";
     
 </script>
 
@@ -48,14 +48,8 @@
           by
           <a href="#">Fernando Cabello</a>
         </p>
-
-        <hr>
-
         <!-- Date/Time -->
         <p>{{ post.created }}</p>
-
-        <hr>
-
         <!-- Preview Image -->
         <img class="img-fluid rounded" src="{{ post.photo_main.url }}" alt="">
 
@@ -64,6 +58,10 @@
         <!-- Post Content -->
         <p class="lead">{{ post.content }}</p>
         <hr>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur na</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, dolori</p>
 
       </div>
       {% endfor %}

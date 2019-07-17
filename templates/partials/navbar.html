@@ -6,22 +6,26 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
 
-            <li {% if '/' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
+            <li {% if '' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
          
             <li {% if 'coding' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'coding' %}">Code</a>
             </li>
+
             <li {% if 'arts' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'arts' %}">Arts</a>
             </li>
+
             <li {% if 'post' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'post' %}">Blog</a>
             </li>
+
             <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
+
             <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
                   <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
