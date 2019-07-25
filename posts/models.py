@@ -27,11 +27,11 @@ class Post(models.Model):
     created           = models.DateTimeField(auto_now_add=True) 
     update            = models.DateTimeField(auto_now=True) 
     status            = models.CharField(max_length=9, choices=STATUS_CHOICES, default='draft')
-    photo_1           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    photo_2           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    photo_3           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    photo_4           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    photo_5           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+    photo_1           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
+    photo_2           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
+    photo_3           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
+    photo_4           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
+    photo_5           = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
 
     def __str__(self):
         return self.title
