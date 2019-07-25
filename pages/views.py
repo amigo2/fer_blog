@@ -19,17 +19,13 @@ def index(request):
     }
 
     return render( request, 'pages/index.html', context)
-
+# this is dummy, main url's are pointing to views.post 
 def post(request):
-    
-    posts = Post.objects.order_by('-published')
-    context={
-        #passing all objects to template through posts
-        'posts'      : posts
-    }
+
+    #post = get_object_or_404(Post, pk=post_id)
 
 
-    return render( request, 'posts/posts.html', context)
+    return render(request, 'posts/post.html')
 
 
 
