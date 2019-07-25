@@ -20,12 +20,12 @@ def index(request):
 
     return render( request, 'pages/index.html', context)
 # this is dummy, main url's are pointing to views.post 
-def post(request):
+"""def post(request):
 
     #post = get_object_or_404(Post, pk=post_id)
 
 
-    return render(request, 'posts/post.html')
+    return render(request, 'posts/post.html')"""
 
 
 
