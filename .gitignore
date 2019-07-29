@@ -145,5 +145,5 @@ dmypy.json
 
 /staticfiles
 **/media
-run_the_matrix
+run_the_matrix.py
 
