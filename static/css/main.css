@@ -1,44 +1,80 @@
-
-body {
-	margin: 0;
-	background-color: rgb(255, 255, 255);
-	color: #fff;
-
-
-	line-height: 24px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
 }
 
-a {
-	color: #ff0;
-	text-decoration: none;
+p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
 }
 
-a:hover {
-	text-decoration: underline;
-}
 
-button {
-	display: inline-block;
-	cursor: pointer;
-	text-transform: uppercase;
+/* 
+Basic stuf....................
+*/
+#preloader{
+    background-color: white;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:9999;
 }
-
-canvas {
-	display: block;
-}
-
-#info {
+#status{
+	background-image:url('../img/Blocks.gif');
+	background-repeat: no-repeat;
+	height:70px;
+	width: 70px;
 	position: absolute;
-	top: 0px;
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	text-align: center;
-	z-index: 1; /* TODO Solve this in HTML */
+	left:50%;
+	top:50%;
+	margin-top: -35px;
+	margin-left: -35px;
+
 }
 
-.dg.ac {
-	z-index: 2 !important; /* TODO Solve this in HTML */
+#welcome {
+    padding-top: 300px;
+    text-align: center;
+    padding-bottom: 40px;
+	font-size: 40px;
+	line-height: 20px;
+
 }
 
+#info_button
+{
+	padding-left: 80%;
+	padding-bottom: 40px;
+}
 
+#mini_content_index{
+	margin: 0 6px;
+    padding: 20px 0px 20px 5px;
+}
+
+#main_image_post{
+	padding: 10px 0px 0px 0px;
+
+}
+#mini_content_post{
+	margin: 0 6px;
+    padding: 20px 0px 10px 5px;
+}
+
+#post_content{
+
+	padding: 20px 0px 50px 5px;
+
+}
+#carousel_post{
+
+
+}
