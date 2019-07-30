@@ -3,6 +3,10 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'index/index_three.css' %}">
+
+
+
 
 <!-- 3D.js-->
 <div id="container">		
@@ -16,8 +20,13 @@
 
         <script src="{% static 'js/three.js-master/WebGL.js' %}"></script>
 
-        <script src="{% static 'js/background.js' %}"></script>
+        <script src="{% static 'index/background.js' %}"></script>
     </div>
+
+ <div class= 'welcome'>
+ <h1>Welcome to my professional blog, hope you like it!!</h1>
+ </div>
+
 
 <div class="container">
 <!-- Breadcrumb -->
@@ -29,7 +38,6 @@
         <a href="{% url 'index' %}">
             <i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="breadcrumb-item active"> Posts</li>
     </ol>
     </nav>
 </div>
@@ -43,7 +51,7 @@
     <div class="row">
   
       <!-- Post Content Column -->
-      <div class="col-lg-8">
+      <div class="col-md-8">
 
         <!-- Title -->
         <h1 class="mt-4">{{ post.title }}</h1>
@@ -118,6 +126,7 @@
 </div>
 </div>
 <!-- /.Pagination -->
+
 
 
 

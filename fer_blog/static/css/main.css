@@ -1,48 +1,34 @@
-
-body {
-	margin: 0;
-	background-color: rgb(255, 255, 255);
-	color: #fff;
-
-
-	line-height: 24px;
+#preloader{
+    background-color: white;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:9999;
 }
-
-a {
-	color: #ff0;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-button {
-	display: inline-block;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-canvas{
+#status{
+	background-image:url('../img/Blocks.gif');
+	background-repeat: no-repeat;
+	height:70px;
+	width: 70px;
 	position: absolute;
-	top:0;
-	left:0;
-	z-index:-1;
-  }
+	left:50%;
+	top:50%;
+	margin-top: -35px;
+	margin-left: -35px;
 
-
-#info {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	text-align: center;
-	z-index: 1; /* TODO Solve this in HTML */
 }
 
-.dg.ac {
-	z-index: 2 !important; /* TODO Solve this in HTML */
+.welcome {
+
+    padding-top: 300px;
+    text-align: center;
+    padding-bottom: 100px;
+    
+    font-family: 'Raleway', sans-serif;
 }
+h1 {
+	font-family: "Raleway",sans-serif;
 
-
+}
