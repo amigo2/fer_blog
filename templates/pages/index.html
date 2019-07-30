@@ -23,8 +23,13 @@
         <script src="{% static 'index/background.js' %}"></script>
     </div>
 
- <div class= 'welcome'>
- <h1>Welcome to my professional blog, hope you like it!!</h1>
+
+
+
+
+ <div id= "welcome">
+    <h1>FERNANDO CABELLO</h1>
+    <h2>professional blog</h2>
  </div>
 
 
@@ -45,36 +50,38 @@
 
 
 
-<!-- Page Content -->
-  <div class="container">
-  {% for post in posts %}
+<!-- Post Content -->
+<div class="container">
     <div class="row">
-  
       <!-- Post Content Column -->
       <div class="col-md-8">
-
-        <!-- Title -->
-        <h1 class="mt-4">{{ post.title }}</h1>
-
-        <!-- Author -->
-        <p class="lead">
-          by
-          <a href="#">{{ post.author}}</a>
-        </p>
-        <!-- Date/Time -->
-        <p>{{ post.created }}</p>
-        <!-- Preview Image -->
-        <img class="img-fluid rounded" src="{{ post.photo_main.url }}" alt="">
-
-        <!-- Post Content -->
-        <p class="lead">{{ post.mini_content }}</p>
-        <hr>
-        
-        <a href="{% url 'post' post.id %}" class="btn btn-primary btn-block">More Info</a>
-
-      </div>
-      {% endfor %}
-      
+          {% for post in posts %}
+            <!-- Title -->
+            <h1>{{ post.title }}</h1>
+            <hr>
+            <!-- Author -->
+            <p class="lead">
+              by user: <a href="#">{{ post.author}}</a>
+            </p>
+            <!-- Date/Time -->
+            <p>{{ post.created }}</p>
+            <!-- Preview Image -->
+            <div id="main_image_post">
+                <img class="img-fluid rounded" src="{{ post.photo_main.url }}" alt="">
+            </div>
+            <!-- Post Content -->
+            <div id="mini_content_index">
+                <p>{{ post.mini_content }}</p>
+            </div>
+            
+            <div id= "info_button">
+                <a href="{% url 'post' post.id %}" class="btn btn-primary btn-md">More Info</a>
+            </div>
+          {% endfor %}
+          <!-- Post Content Column ends -->
+        </div>
+        <!-- Side Widgets-->
+        {% include 'partials/side_widgets.html' %}
     </div>
     <!-- /.row -->
     <hr>
@@ -82,10 +89,13 @@
   <!-- /.container -->
   </div>
 </div>
+  <!-- /Post Content -->
+
+
 
 <!-- Pagination -->
  <div class="row">
-              <div class="mx-auto" style="width: 200px;">
+        <div class="mx-auto" style="width: 200px;">
     {% if posts.has_other_pages %}
     <ul class="pagination">
         {% if posts.has_previous %}

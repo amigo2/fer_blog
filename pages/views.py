@@ -10,7 +10,7 @@ def index(request):
 
     # pagination
     # max objevt per page
-    paginator = Paginator(posts,1)
+    paginator = Paginator(posts,3)
     page = request.GET.get('page')
     paged_posts = paginator.get_page(page)
 
