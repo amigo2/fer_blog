@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'ckeditor',
     'pages.apps.PagesConfig',
     'posts.apps.PostsConfig',
     'django.contrib.admin',
@@ -40,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    #'ckeditor_uploader',
+
     
 
 
@@ -90,17 +92,6 @@ DATABASES = {
         }
 }
 
-#richtext
-DJRICHTEXTFIELD_CONFIG = {
-    'js': ['//tinymce.cachefly.net/4.1/tinymce.min.js'],
-    'init_template': 'djrichtextfield/init/tinymce.js',
-    'settings': {
-        'menubar': False,
-        'plugins': 'link image',
-        'toolbar': 'bold italic | link image | removeformat',
-        'width': 700
-    }
-}
 
 
 # Password validation
@@ -140,7 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 # were to put statc
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')#origin
+#STATIC_ROOT = os.path.join(BASE_DIR, 'fer_blog/static')#ckeditor
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ 
     os.path.join(BASE_DIR, 'fer_blog/static')
@@ -151,10 +144,29 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CKEDITOR_BASEPATH = os.path.join(STATIC_URL)
+####################################
+    ##  CKEDITOR CONFIGURATION ##
+####################################
+
+CKEDITOR_BASEPATH = 'fer_blog/static/ckeditor/ckeditor'
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+ 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+ 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+ 
+###################################
+
+
 
 #Add code to your settings.py file and push to server
-try:
+'''try:
     from .local_settings import *
 except ImportError:
-    pass
+    pass'''

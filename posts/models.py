@@ -3,9 +3,9 @@ from django.db import models
 
 from django.utils import timezone
 from django.contrib.auth.models import User
+
 from ckeditor.fields import RichTextField
-
-
+#from ckeditor_uploader.fields import RichTextField, RichTextUploadingField
 
 
 class Category(models.Model):
@@ -25,8 +25,8 @@ class Post(models.Model):
     author            = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True)
     category          = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     photo_main        = models.ImageField(upload_to='photos/%Y/%m/%d')
-    mini_content      = models.TextField(blank=True)
-    content           = models.TextField(blank=True)
+    mini_content      = RichTextField(blank=True)
+    content           = RichTextField(blank=True)
     published         = models.DateTimeField(default=timezone.now)
     created           = models.DateTimeField(auto_now_add=True) 
     update            = models.DateTimeField(auto_now=True) 

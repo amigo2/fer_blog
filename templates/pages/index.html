@@ -71,9 +71,9 @@
             </div>
             <!-- Post Content -->
             <div id="mini_content_index">
-                <p>{{ post.mini_content }}</p>
+                <p>{{ post.mini_content|safe }}</p>
             </div>
-            
+            <!-- Post Button -->
             <div id= "info_button">
                 <a href="{% url 'post' post.id %}" class="btn btn-primary btn-md">More Info</a>
             </div>

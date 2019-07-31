@@ -37,7 +37,7 @@
             </div>
              <!-- Post Content -->
             <div id="mini_content_post">
-                  <p>{{ post.mini_content }}</p>
+                  <p>{{ post.mini_content|safe }}</p>
               </div>
             
             <!-- Carousel -->
@@ -76,7 +76,7 @@
             <!-- //Carousel -->
             <!-- Content-->
             <div id= "post_content">
-              <p class="lead">{{ post.content }}</p>
+              <p class="lead">{{ post.content|safe }}</p>
             </div>
 
         </div>

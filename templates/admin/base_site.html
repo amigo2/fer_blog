@@ -1,0 +1,12 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block branding %}
+<h1 id="head">Fer Blog</h1>
+{% endblock %}
+
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{{ block.super }}
+{% endblock %}
