@@ -166,7 +166,7 @@ CKEDITOR_CONFIGS = {
 
 
 #Add code to your settings.py file and push to server
-'''try:
+try:
     from .local_settings import *
 except ImportError:
-    pass'''
+    pass
