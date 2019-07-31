@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'pages.apps.PagesConfig',
     'posts.apps.PostsConfig',
     'django.contrib.admin',
@@ -39,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djrichtextfield',
-    'ckeditor',
+    
 
 
     
@@ -151,7 +151,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
+CKEDITOR_BASEPATH = os.path.join(STATIC_URL)
 
 #Add code to your settings.py file and push to server
 try:
