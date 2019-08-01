@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from posts.models import Post
+from posts.models import Category
 
 
 
@@ -19,23 +20,13 @@ def index(request):
     }
 
     return render( request, 'pages/index.html', context)
-# this is dummy, main url's are pointing to views.post 
-"""def post(request):
-
-    #post = get_object_or_404(Post, pk=post_id)
-
-
-    return render(request, 'posts/post.html')"""
-
-
-
-def about(request):
-    return render( request, 'pages/about.html')
     
 
 def coding(request):
 
-    posts = Post.objects.all()
+    #posts = Post.objects.all()
+    #posts = Post.objects.all().order_by('category', 'created').distinct('category')
+    posts = Post.objects.order_by( 'published').filter( category = '01')
     context={
         #passing all objects to template through posts
         'posts'      : posts
@@ -45,7 +36,17 @@ def coding(request):
     return render( request, 'pages/coding.html', context)
 
 def arts(request):
-    return render( request, 'pages/arts.html')
+
+    posts = Post.objects.order_by( 'published').filter( category = '02')
+    context={
+        #passing all objects to template through posts
+        'posts'      : posts
+    }
+    return render( request, 'pages/arts.html', context)
 
 def contact(request):
     return render( request, 'pages/contact.html')
+
+
+def about(request):
+    return render( request, 'pages/about.html')

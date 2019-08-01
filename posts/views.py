@@ -8,10 +8,13 @@ from posts.models import Post
 
 def index(request):
 
-    posts = Post.objects.order_by('-published')
+    posts = Post.objects.all().order_by('-published')
+    paginator = Paginator(posts,3)
+    page = request.GET.get('page')
+    paged_posts = paginator.get_page(page)
+
     context={
-        #passing all objects to template through posts
-        'posts'      : posts
+        'posts' : paged_posts
     }
 
 

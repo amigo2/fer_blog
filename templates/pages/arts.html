@@ -10,40 +10,84 @@
 <link rel="stylesheet" href="{% static 'waves/style.css' %}">
 
 
-
-<h1>A little something for a site I'm working on. Made with the threejs library.</h1>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+<div class="container">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a href="{% url 'index' %}">
+            <i class="fas fa-home"></i>Home</a>
+        </li>
+        <li class="breadcrumb-item active">Arts</li>
+    </ol>
+    </nav>
+</div>
+</section>
 
 <div class="container">
-        <h2>Latest Posts</h2>
-
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to my new Blog!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Browse some of my work</a>
-            </p>
-            </div>
-    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to my new Blog!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Browse some of my work</a>
+        </p>
+        </div>
+</div>
 
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js'></script>
 
-  
+<!-- Post Content -->
 <div class="container">
-        <h2>Latest Posts</h2>
-
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to my new Blog!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <div class="row">
+      <!-- Post Content Column -->
+      <div class="col-md-8">
+          {% for post in posts %}
+            <!-- Title -->
+            <h1>{{ post.title }}</h1>
+            <hr>
+            <!-- Author -->
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Browse some of my work</a>
+              by user: <a href="#">{{ post.author}}</a>
             </p>
+            <!-- Date/Time -->
+            <p>{{ post.created }}</p>
+            <!-- Preview Image -->
+            <div id="main_image_post">
+                <img class="img-fluid rounded" src="{{ post.photo_main.url }}" alt="">
             </div>
+            <!-- Post Content -->
+            <div id="mini_content_index">
+                <p>{{ post.mini_content|safe }}</p>
+            </div>
+            <!-- Post Button -->
+            <div id= "info_button">
+                <a href="{% url 'post' post.id %}" class="btn btn-primary btn-md">More Info</a>
+            </div>
+          {% endfor %}
+          <!-- Post Content Column ends -->
+        </div>
+        <!-- Side Widgets-->
+
     </div>
+    <!-- /.row -->
+    <hr>
+  </div>
+  <!-- /.container -->
+  </div>
+</div>
+  <!-- /Post Content -->  
+
+
+
+
+
+
+
+
 
 
     <script  src="{% static 'waves/script.js' %}"></script>

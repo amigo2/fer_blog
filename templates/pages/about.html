@@ -1,7 +1,76 @@
-
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block content %}
-About
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+  <div class="container">
+      <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+          <a href= "{% url 'index' %}">
+              <i class="fas fa-home"></i>Home</a>
+          </li>
+          <li class="breadcrumb-item active">About</li>
+      </ol>
+      </nav>
+  </div>
+</section>
+<!-- About -->
+<div id="about_image_text">
+    <div class="container">
+        <div class="row">
+        <!-- round image--> <!-- welcome mini text!-->
+            <div class="col-md-4">
+                    <div class="container">
+                    <h2>Circle</h2>
+                    <p>The .rounded-circle class shapes the image to a circle:</p>            
+                    </div>
+            </div>
+            <div class="col-md-8">
+                    <div class="container text-center">     
+                    <img src={% static 'img/fer_main.jpg' %} class="rounded-circle" alt="Cinque Terre" width="300" height="280"> 
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Present and vision-->
+
+
+
+
+<!-- Skills-->
+<div id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="progress blue">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">90%</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="progress yellow">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">75%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- My History-->
+
 {% endblock %}
