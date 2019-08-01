@@ -31,4 +31,21 @@ def post(request, post_id):
     }
 
     return render(request, 'posts/post.html', context)
-    
+
+def search(request):
+
+    query_list = Post.objects.all().order_by('-published')
+
+    # Keywords
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            query_content = query_list.filter( content__icontains  = keywords)
+            query_mini_content = query_list.filter( mini_content__icontains  = keywords)
+
+    context={
+        'posts' : query_content, 
+        'posts' : query_mini_content, 
+
+    }
+    return render(request, 'posts/search.html', context)
