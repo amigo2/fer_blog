@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from posts.models import Post
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -35,17 +36,22 @@ def post(request, post_id):
 def search(request):
 
     query_list = Post.objects.all().order_by('-published')
+    #query_user = User.objects.all()
 
     # Keywords
     if 'keywords' in request.GET:
         keywords = request.GET['keywords']
         if keywords:
-            query_content = query_list.filter( content__icontains  = keywords)
-            query_mini_content = query_list.filter( mini_content__icontains  = keywords)
+            query_content      = query_list.filter( content__icontains      = keywords)
+            query_mini_content = query_list.filter( mini_content__icontains = keywords)
+            #query_title        = query_list.filter( title__icontains        = keywords)
+            #query_author       = query_user.filter( username__icontains     = keywords)
 
     context={
-        'posts' : query_content, 
         'posts' : query_mini_content, 
+        'posts' : query_content, 
+        #'posts' : query_title, 
+        #'posts' : query_author, 
 
     }
     return render(request, 'posts/search.html', context)
