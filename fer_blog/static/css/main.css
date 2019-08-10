@@ -44,9 +44,19 @@ Basic stuf....................
     padding-top: 300px;
     text-align: center;
     padding-bottom: 40px;
-	font-size: 40px;
-	line-height: 20px;
+  	
+  	line-height: 20px;
+}
 
+#welcome_f_text{
+    font-size: 60px;
+    padding-bottom: 40px;
+
+}
+#latest_post{
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 #info_button
@@ -92,6 +102,89 @@ Basic stuf....................
                 Skills
 ============================================ */
 #skills{
-    padding: 20px 0px 50px 5px;
+    padding: 20px 0px 0px 5px;
 
 }
+#skills_old{
+    padding: -100px 0px 0px 5px;
+    /*background-color: rgb(184, 184, 184);*/
+
+}
+
+#about_history{
+    padding: 50px 0px 50px 5px;   
+}
+
+
+/* =========================================
+                Skills 2
+============================================ */
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .single-chart {
+    width: 33%;
+    justify-content: space-around ;
+  }
+  
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .circular-chart.orange .circle {
+    stroke: #ff9f00;
+  }
+  
+  .circular-chart.cyan .circle {
+    stroke: rgb(9, 227, 235);
+  }
+  
+  .circular-chart.blue .circle {
+    stroke: #0383df;
+  }
+  .circular-chart.purple .circle {
+    stroke: #a73ce5;
+  }
+  .circular-chart.pink .circle {
+    stroke: #d808ab;
+  }
+  .circular-chart.yellow .circle {
+    stroke: #e7d107;
+  }
+  .circular-chart.green .circle {
+    stroke: #1ae707;
+  }
+  .circular-chart.red .circle {
+    stroke: #e70707;
+  }
+  
+  .percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }

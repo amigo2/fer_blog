@@ -25,7 +25,9 @@ function init() {
 
     //
     scene = new THREE.Scene();
+    
     //
+    //camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 20000 );
     camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 20000 );
     camera.position.set( 30, 30, 100 );
 
@@ -82,6 +84,7 @@ function init() {
         azimuth: 0.205
     };
 
+
     var cubeCamera = new THREE.CubeCamera( 0.1, 1, 512 );
     cubeCamera.renderTarget.texture.generateMipmaps = true;
     cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter;
@@ -118,9 +121,15 @@ function init() {
     for ( var i = 0; i < 500; i ++ ) {
 
         var mesh = new THREE.Mesh( geometry, material );
-        mesh.position.x = Math.random() * 4800 - 4800;
+        /*mesh.position.x = Math.random() * 4800 - 4800;
         mesh.position.y = Math.random() * -10 - 10;
-        mesh.position.z = Math.random() * 4800 - 800;
+        mesh.position.z = Math.random() * 4800 - 800;*/
+
+        mesh.position.x = 0;
+        mesh.position.y = -10;
+        mesh.position.z = 4800 - 800;
+
+
         mesh.scale.x = 20;
         mesh.scale.y = Math.random() * 80 + 10;
         mesh.scale.z = 20;

@@ -1,11 +1,13 @@
 canvas{
+	display: block;
 	position: absolute;
 	height: 300px;
 	top:0;
 	left:0;
 	z-index:-1;
-	
 	}
+
+
 
 	.container{
 		margin-bottom: 50px;

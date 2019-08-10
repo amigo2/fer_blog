@@ -2,24 +2,12 @@
 {% load static %}
 
 
+
 {% block content %}
+  
 
-<link rel="stylesheet" href="{% static 'coding/style.css' %}">
-
-
-
-<script src= "{% static 'js/three.js-master/loaders/OBJLoader.js' %}"></script>
-<script src= "{% static 'js/three.js-master/controls/TrackballControls.js' %}"></script>
-
-<script>
-    var texture_url = "{% static 'assets/Blue.jpg' %}";
-    var whale       = "{% static 'assets/Erika.obj' %}";
-    
-</script>
-
-<script  src="{% static 'coding/coding_loader_script.js' %}"></script>
-
-
+  
+<link rel="stylesheet" href="{% static 'waves/style.css' %}">
 
 
 <!-- Breadcrumb -->
@@ -36,6 +24,26 @@
     </nav>
 </div>
 </section>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Passionate about coding</h1>
+        <p class="lead">Programming and science always been a passion for me. I still remember perfectly when my mum bought our firts computer a Spectrum 16K back 
+        then in the 80's. At at that precise moment I new what I wanted to do, Games. </p>
+        <p class="lead">It took long time till I really started to do some serious coding, 
+        everything started with 3Ds max. As a digital artist and amateur coder, was inevitable, sooner or later I will create my own tools and pulgins.
+        I started creating some pluging and bones systems in max scripts.. Later on I fully inmersed and decide 
+        to study computer science to reaaly understand what was going on.  </p>
+        <p class="lead">
+        Is just not along that I transformed my-self from games programmer and University lecturer to web programming and science like Machine Learning and bioinformatics.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+        </div>
+</div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js'></script>
 
 <!-- Post Content -->
 <div class="container">
@@ -76,52 +84,13 @@
   <!-- /.container -->
   </div>
 </div>
-  <!-- /Post Content -->
+  <!-- /Post Content -->  
 
 
 
-<!-- Pagination -->
- <div class="row">
-        <div class="mx-auto" style="width: 200px;">
-    {% if posts.has_other_pages %}
-    <ul class="pagination">
-        {% if posts.has_previous %}
-        <li class="=page-item">
-            <a href="?page={{ posts.previous_page_number }}" class="page-link">&laquo;
-            </a>
-        </li>
-        {% else %}
-            <li class="page_item disabled">
-            <a class="page-link">&laquo;</a>
-            </li>
-        {% endif %}
-        {% for i in posts.paginator.page_range %}
-            {% if posts.number == i %}
-            <li class="page-item active"></li>
-            <a class="page-link">{{i}}</a>
-            </li>
-            {% else %}        
-            <li class="page-item">
-                <a href="?page={{i}}" class="page-link">{{i}}</a>
-            </li>
-            {% endif %}
-        {% endfor %}
-
-        {% if posts.has_next %}
-        <li class="=page-item">
-            <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;
-            </a>
-        </li>
-        {% else %}
-            <li class="page_item disabled">
-            <a class="page-link">&raquo;</a>
-            </li>
-        {% endif %}
-    </ul>
-    {% endif %}
-</div> 
-</div>
-</div>
-<!-- /.Pagination -->
+    <script  src="{% static 'waves/script.js' %}"></script>
 
 {% endblock %}
+
+
+

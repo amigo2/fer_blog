@@ -35,14 +35,15 @@ function init()
 	//Should be done with canvas but this is quick work around
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight * 0.5, 1, 5000 );
 
-	camera.position.set( 500, 0, -1000 );
+	camera.position.set( 500, 0, -1700 );//Change distance to fit
 
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0xa0a0a0 );
-	scene.fog = new THREE.Fog( 0xa0a0a0, 10, 3000 );
+	scene.fog = new THREE.Fog( 0xa0a0a0, 0, 3000 );
 
 	light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
-	light.position.set( 0, 200, 0 );
+	light.position.set( 0, 600, 0 );
+	light.castShadow = true;
 	scene.add( light );
 
 	light = new THREE.DirectionalLight( 0xffffff );
@@ -52,12 +53,12 @@ function init()
 	light.shadow.camera.bottom = - 100;
 	light.shadow.camera.left = - 120;
 	light.shadow.camera.right = 120;
-	scene.add( light );
+	//scene.add( light );
 	
 
 	var ground = new THREE.Mesh( new THREE.PlaneBufferGeometry( 10000, 10000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
 	ground.rotation.x = - Math.PI / 2;
-	ground.position.y = -111;
+	ground.position.y = -0;
 	ground.receiveShadow = true;
 	scene.add( ground );
 
@@ -74,7 +75,7 @@ function init()
 		} );
 		//Object position
 		object.position.y = -700;
-		object.position.x = 0;//160 for mobile
+		object.position.x = -20;//160 for mobile
 		object.position.z = -400;
 		scene.add( object );
 
@@ -181,5 +182,6 @@ function render() {
 
 	renderer.render( scene, camera );
 	
+	//postprocessing.composer.render( 0.1 );
 
 }
