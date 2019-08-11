@@ -38,8 +38,9 @@ function init()
 	camera.position.set( 500, 0, -1700 );//Change distance to fit
 
 	scene = new THREE.Scene();
-	scene.background = new THREE.Color( 0xa0a0a0 );
-	scene.fog = new THREE.Fog( 0xa0a0a0, 0, 3000 );
+	//scene.background = new THREE.Color( 0xa0a0a0 );
+	scene.background = new THREE.Color( 0xffffff );
+	scene.fog = new THREE.Fog( 0xffffff, 0, 3000 );
 
 	light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 	light.position.set( 0, 600, 0 );
@@ -60,7 +61,7 @@ function init()
 	ground.rotation.x = - Math.PI / 2;
 	ground.position.y = -0;
 	ground.receiveShadow = true;
-	scene.add( ground );
+	//scene.add( ground );
 
 
 
@@ -74,9 +75,9 @@ function init()
 
 		} );
 		//Object position
-		object.position.y = -700;
-		object.position.x = -20;//160 for mobile
-		object.position.z = -400;
+		object.position.y = -600;
+		object.position.x = -200;//160 for mobile
+		object.position.z = -100;
 		scene.add( object );
 
 	}

@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="{% static 'coding/style.css' %}">
 
-    
+
 
 <script src= "{% static 'js/three.js-master/loaders/OBJLoader.js' %}"></script>
 <script src= "{% static 'js/three.js-master/controls/TrackballControls.js' %}"></script>
@@ -70,8 +70,10 @@
 
             } );
 
-            object.position.y = -500;
-            object.position.x = -600;
+            object.position.y = -0;
+            object.position.x = 0;
+            object.position.z = -500;
+            object.rotation.y = -60;
             scene.add( object );
 
         }
@@ -88,7 +90,7 @@
 
         var textureLoader = new THREE.TextureLoader( manager );
 
-        var texture = textureLoader.load( "{% static 'assets/UV_Grid_Sm.jpg' %}" );
+        var texture = textureLoader.load( "{% static 'assets/Blue.jpg' %}" );
 
         // model
 
@@ -108,7 +110,7 @@
         var loader = new THREE.OBJLoader( manager );
 
         //loader.load( 'models/obj/male02/male02.obj', function ( obj ) 
-        loader.load( "{% static 'assets/whale.obj'  %}", function ( obj ) 
+        loader.load( "{% static 'assets/BisonZ.obj'  %}", function ( obj ) 
         {
 
             object = obj;
@@ -167,7 +169,7 @@
     function render() {
 
         //controls.update();
-        object.rotation.y += 0.004;
+       // object.rotation.y += 0.004;//stops rotation
 
         //camera.position.x += ( mouseX - camera.position.x ) * .05;
         //camera.position.y += ( - mouseY - camera.position.y ) * .05;
@@ -182,46 +184,24 @@
 </script>
 
 
-
-
-        <div class="container">
-    <!-- About -->
-    <div id="about_image_text">
-        <div class="container">
-            <div class="row">
-            <!-- round image--> <!-- welcome mini text!-->
-                <div class="col-md-6">
-                        <div class="container">
-                        <h2>Fernando Cabello Domingo</h2>
-                        <p>Please contact me for whatever you need!</p>    
-                        <p>Best way of contacting, please drope me an email.
-                            email: fernando.cabello.domingo@gmail.com</p>        
-                        </div>
-                </div>
-                <div class="col-md-6">
-                        <div class="container text-center">     
-                        <img src={% static 'img/fer_main.jpg' %} class="rounded-circle" alt="Cinque Terre" width="300" height="280"> 
-                        </div>
-                </div>
+<!-- About -->
+<div id="about_image_text">
+    <div class="container">
+        <div class="row">
+        <!-- round image--> <!-- welcome mini text!-->
+            <div class="col-md-6">
+                    <div class="container">
+                    <h1 class="display-4">Fernando Cabello Domingo</h1>
+                    <p class="lead">Please contact me for whatever you need!.</p>
+                    <hr class="my-4">
+                    <p>Best way of contacting, please drope me an email at: fernando.cabello.domingo@gmail.com</p>
+                        
+                    </div>
             </div>
         </div>
     </div>
+</div>
 
-
-
-    
-	<div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to my new Blog!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Browse some of my work</a>
-            </p>
-            </div>
-        </div>
-        </div>
 
 
 

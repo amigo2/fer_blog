@@ -40,7 +40,7 @@
 </div>
 </section>
 
-<div id = "trans">
+
 <div class="container" >
     <div class="jumbotron">
         <h1 class="display-4"> Natural born artist.</h1>
@@ -53,13 +53,14 @@
         </div>
 </div>
 
-</div>
+
 
 <!-- Post Content -->
 <div class="container">
     <div class="row">
       <!-- Post Content Column -->
       <div class="col-md-8">
+
           {% for post in posts %}
             <!-- Title -->
             <h1>{{ post.title }}</h1>
@@ -82,7 +83,7 @@
             <div id= "info_button">
                 <a href="{% url 'post' post.id %}" class="btn btn-primary btn-md">More Info</a>
             </div>
-          {% endfor %}
+          {% endfor %} 
           <!-- Post Content Column ends -->
         </div>
         <!-- Side Widgets-->

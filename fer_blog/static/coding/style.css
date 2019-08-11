@@ -1,9 +1,14 @@
 
 canvas{
 	position: absolute;
-	height: 300px;
+	height: 500px;
 	top:0;
 	left:0;
+	opacity: 0.6;
 	z-index:-1;
+
 	}
-	
+#about_image_text{
+
+	padding-bottom: 300px;
+}
