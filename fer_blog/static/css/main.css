@@ -41,7 +41,7 @@ Basic stuf....................
 }
 
 #welcome {
-    padding-top: 300px;
+    padding-top: 100px;
     text-align: center;
     padding-bottom: 40px;
   	
@@ -76,7 +76,7 @@ Basic stuf....................
 }
 #mini_content_post{
 	margin: 0 6px;
-    padding: 20px 0px 10px 5px;
+    padding: 10px 0px 50px 5px;
 }
 
 #post_content{

@@ -6,9 +6,10 @@ canvas{
 	left:0;
 	opacity: 0.6;
 	z-index:-1;
+	background-color: darkgrey;
 
 	}
 #about_image_text{
 
-	padding-bottom: 300px;
+	padding-bottom: 50px;
 }

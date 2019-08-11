@@ -7,7 +7,7 @@ from posts.models import Category
 
 
 def index(request):
-    posts = Post.objects.order_by('published').filter( status = 'published')
+    posts = Post.objects.order_by('-published').filter( status = 'published')
 
     # pagination
     # max objevt per page
@@ -26,7 +26,7 @@ def coding(request):
 
     #posts = Post.objects.all()
     #posts = Post.objects.all().order_by('category', 'created').distinct('category')
-    posts = Post.objects.order_by( 'published').filter( category = '01')
+    posts = Post.objects.order_by( '-published').filter( category = '01')
     context={
         #passing all objects to template through posts
         'posts'      : posts
@@ -37,7 +37,7 @@ def coding(request):
 
 def arts(request):
 
-    posts = Post.objects.order_by( 'published').filter( category = '02')
+    posts = Post.objects.order_by( '-published').filter( category = '02')
 
     # pagination
     # max objevt per page
